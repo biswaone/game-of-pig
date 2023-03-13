@@ -42,7 +42,7 @@ func TestParseArgs(t *testing.T) {
 		{
 			name:          "Valid argument",
 			input:         []string{"20", "30"},
-			expected:      GameStrategy{player1: 20, player2: 30, strategy: 1},
+			expected:      GameStrategy{Player1: 20, Player2: 30, Strategy: 1},
 			expectedError: "",
 		},
 		{
@@ -69,7 +69,7 @@ func TestParseArgs(t *testing.T) {
 		{
 			name:          "Valid arguments for story 2",
 			input:         []string{"10", "1-100"},
-			expected:      GameStrategy{player1: 10, strategy: 2},
+			expected:      GameStrategy{Player1: 10, Strategy: 2},
 			expectedError: "",
 		},
 		{
@@ -89,7 +89,7 @@ func TestParseArgs(t *testing.T) {
 		{
 			name:          "valid arguments for story 3",
 			input:         []string{"1-100", "1-100"},
-			expected:      GameStrategy{strategy: 3},
+			expected:      GameStrategy{Strategy: 3},
 			expectedError: "",
 		},
 	}

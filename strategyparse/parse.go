@@ -12,9 +12,9 @@ import (
 //the arguments passed
 
 type GameStrategy struct {
-	player1  int
-	player2  int
-	strategy int // To indicate which strategy to use
+	Player1  int
+	Player2  int
+	Strategy int // To indicate which strategy to use
 	// 1- both users fixed strategy
 	// 2- one user fixed strategy and other variable strategy
 	// 3- both variable strategy
@@ -59,13 +59,13 @@ func ParseAndValidateArgs(args []string) (GameStrategy, error) {
 			return s, err
 		}
 		// validated the strings as a number then assigning
-		s.player1, _ = strconv.Atoi(args[0])
-		s.player2, _ = strconv.Atoi(args[1])
+		s.Player1, _ = strconv.Atoi(args[0])
+		s.Player2, _ = strconv.Atoi(args[1])
 
-		s.strategy = 1
+		s.Strategy = 1
 
 		//check if the number is between specified range
-		if s.player1 > 100 || s.player2 > 100 {
+		if s.Player1 > 100 || s.Player2 > 100 {
 			return s, errors.New("must specify a number less than equal to 100")
 		}
 
@@ -73,24 +73,24 @@ func ParseAndValidateArgs(args []string) (GameStrategy, error) {
 
 	//story 2
 	if !strings.Contains(args[0], "-") && args[1] == "1-100" {
-		s.player1, err = strconv.Atoi(args[0])
+		s.Player1, err = strconv.Atoi(args[0])
 		if err != nil {
-			s.player1 = 0 //Return an zero initialized struct in case of error
+			s.Player1 = 0 //Return an zero initialized struct in case of error
 			return s, err
 		}
 
-		if s.player1 > 100 {
-			s.player1 = 0
+		if s.Player1 > 100 {
+			s.Player1 = 0
 			return s, errors.New("must specify a number less than equal to 100")
 		}
 
-		s.strategy = 2
+		s.Strategy = 2
 
 	}
 
 	// story 3
 	if args[0] == "1-100" && args[1] == "1-100" {
-		s.strategy = 3
+		s.Strategy = 3
 	}
 
 	//if any of the condition doesn't match
