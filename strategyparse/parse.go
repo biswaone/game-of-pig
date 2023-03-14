@@ -69,6 +69,7 @@ func ParseAndValidateArgs(args []string) (GameStrategy, error) {
 			return s, errors.New("must specify a number less than equal to 100")
 		}
 
+		return s, nil
 	}
 
 	//story 2
@@ -85,12 +86,13 @@ func ParseAndValidateArgs(args []string) (GameStrategy, error) {
 		}
 
 		s.Story = 2
-
+		return s, nil
 	}
 
 	// story 3
 	if args[0] == "1-100" && args[1] == "1-100" {
 		s.Story = 3
+		return s, nil
 	}
 
 	//if any of the condition doesn't match
