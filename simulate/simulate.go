@@ -60,6 +60,38 @@ func simulateBothUsersFixedStrategy(p1, p2 int) {
 
 func simulateFixAndVariableStrategy(p int) {
 
+	for p2 := 1; p2 <= 100; p2++ {
+		if p2 != p {
+			player1Wins := 0
+			player2Wins := 0
+
+			for i := 0; i < numberOfGames; i++ {
+				//set scores to zero after every game
+				player1Score := 0
+				player2Score := 0
+				for {
+
+					if player1Score >= 100 {
+						player1Wins += 1
+						break
+					}
+					if player2Score >= 100 {
+						player2Wins += 1
+						break
+					}
+					player1Score += playGame(p)
+					player2Score += playGame(p2)
+
+				}
+
+			}
+			fmt.Printf("Holding at %v vs Holding at %v: wins: %d/10 (%0.1f%%), losses: %d/10 (%0.1f%%)\n",
+				p, p2, player1Wins, float64(player1Wins)/10*100, player2Wins, float64(player2Wins)/10*100)
+
+		}
+
+	}
+
 }
 func simulateBothUsersVariableStrategy() {
 
