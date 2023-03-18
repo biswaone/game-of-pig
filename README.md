@@ -22,7 +22,7 @@ make
  ```
  ### Output
  ```
- Holding at 21 vs Holding at 1: wins: 10/10 (100.0%), losses: 0/10 (0.0%)
+Holding at 21 vs Holding at 1: wins: 10/10 (100.0%), losses: 0/10 (0.0%)
 Holding at 21 vs Holding at 2: wins: 10/10 (100.0%), losses: 0/10 (0.0%)
 Holding at 21 vs Holding at 3: wins: 10/10 (100.0%), losses: 0/10 (0.0%)
 ...
@@ -34,3 +34,19 @@ Holding at 21 vs Holding at 12: wins: 7/10 (70.0%), losses: 3/10 (30.0%)
 ...
 Holding at 21 vs Holding at 100: wins: 10/10 (100.0%), losses: 0/10 (0.0%)
  ```
+
+### story 3
+```
+./pig 1-100 1-100
+```
+
+### Output
+```
+Result: Wins, losses staying at k = 1: 399/990 (40.30%), 591/990 (59.70%)
+Result: Wins, losses staying at k = 2: 389/990 (39.29%), 601/990 (60.71%)
+Result: Wins, losses staying at k = 3: 445/990 (44.95%), 545/990 (55.05%)
+...
+...
+Result: Wins, losses staying at k = 99: 242/990 (24.44%), 748/990 (75.56%)
+Result: Wins, losses staying at k = 100: 285/990 (28.79%), 705/990 (71.21%)
+```
